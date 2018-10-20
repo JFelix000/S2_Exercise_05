@@ -75,6 +75,13 @@ footer {
     clear: left;
 }
 
+/* This is always going to be the same no matter what. This helps to avoid container collapse in places like the footer. The after pseudo element creates a way to hold the tent up, and the brown background can be rendered clearly this time. */
+footer::after {
+    clear: both;
+    content: "";
+    display: table;
+}
+
 footer > nav.verticalNavigation {
     float: left;
     width: 22%;
